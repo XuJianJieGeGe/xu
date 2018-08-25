@@ -1,0 +1,78 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title></title>-->
+    <!--<style>-->
+        <!--/*这里随意你设置多少值，100只是举个列子<br>*/-->
+        <!--div:focus{z-index:100;}-->
+    <!--</style>-->
+    <!--<script>-->
+        <!--var lastFocusID="";-->
+        <!--function getFocus()-->
+        <!--{-->
+            <!--var divlist = document.getElementsByTagName('div');-->
+            <!--for(var i=0; i<divlist.length; i++)-->
+            <!--{-->
+                <!--var ta = divlist.item(i);-->
+                <!--if (window.getComputedStyle(ta, null).zIndex!=null && window.getComputedStyle(ta, null).zIndex == 100) {-->
+                    <!--if(ta.id && ta.id!=null)-->
+                        <!--lastFocusID=ta.id.toString();-->
+                    <!--else-->
+                        <!--lastFocusID="";-->
+                    <!--break;-->
+                <!--}-->
+                <!--else-->
+                    <!--lastFocusID="";-->
+            <!--}-->
+
+        <!--}-->
+        <!--//再加入一个全屏事件-->
+        <!--$(window).click(function(e)-->
+        <!--{-->
+            <!--if (window.getSelection)-->
+            <!--{-->
+                <!--var getevent=e.srcElement?e.srcElement:e.target;//不要告诉我不知道这句的意思-->
+
+                <!--if(getevent.tagName=="INPUT" && getevent.id!=null && getevent.id=="cmdInsert")-->
+                <!--{-->
+                    <!--//代表 点了插入html的按钮-->
+                    <!--//则不执行getFocus方法-->
+                <!--}-->
+                <!--else-->
+                    <!--getFocus();//除非点了那个插入html的按钮 其他时候必须要执行getFocus来更新最后失去焦点的div-->
+            <!--}-->
+
+
+        <!--})-->
+
+
+        <!--//然后修改一下 insertHTML 这个方法-->
+        <!--function insertHTML(html)-->
+        <!--{-->
+            <!--var dthis=$("#div3")[0];-->
+            <!--var sel, range;-->
+            <!--if (window.getSelection)-->
+            <!--{-->
+                <!--if(lastFocusID!="div3")-->
+                <!--{-->
+                    <!--$("#div3).html(dthis.innerHTML+html)     ;//说明 用户可能在其他控件上 进行焦点或者其他操作 则-->
+                    <!--return;//后面不执行了<br>-->
+                <!--}-->
+
+               <!--//其他代码照旧-->
+
+
+    <!--</script>-->
+
+
+<!--</head>-->
+<!--<body>-->
+<!--<div id="div1" contentEditable="true"  ></div>-->
+
+<!--<div id="div2" contentEditable="true" ></div>-->
+
+<!--<div contentEditable="true"  id="div3"></div>-->
+<!--<input type="button" id="cmdInsert" onclick="执行向div3插入html方法"/>-->
+<!--</body>-->
+<!--</html>-->

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="${request.scheme+'://'+request.serverName+':'+request.serverPort+'/'+ctxPath}"/>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="CoreUI Bootstrap 4 Admin Template">
+  <meta name="author" content="Lukasz Holeczek">
+  <meta name="keyword" content="CoreUI Bootstrap 4 Admin Template">
+  <!-- <link rel="shortcut icon" href="assets/ico/favicon.png"> -->
+
+  <title>CoreUI Bootstrap 4 Admin Template</title>
+
+  <!-- Icons -->
+  <link href="vendors/css/font-awesome.min.css" rel="stylesheet">
+  <link href="vendors/css/simple-line-icons.min.css" rel="stylesheet">
+
+  <!-- Main styles for this application -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- Styles required by this views -->
+
+</head>
+
+<body class="app flex-row align-items-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card mx-4">
+          <div class="card-body p-4">
+            <h1>注册</h1>
+            <p class="text-muted">创建您的帐户</p>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" style="width: 50px"><i class="fa fa-user-plus fa-lg"></i></span>
+              </div>
+              <select id="role" name="role" class="form-control">
+                <option value="教师">教师</option>
+                <option value="学生">学生</option>>
+              </select>
+            </div>
+            <div class="input-group mb-1">
+              <span id="span_roleTip" style="color:#f00;display:inline-block;" ></span>
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" style="width: 50px"><i class="icon-user"></i></span>
+              </div>
+              <input id="user" type="text" class="form-control" placeholder="账号" onblur="m_userTipOnblur()">
+            </div>
+            <div class="input-group mb-1">
+              <span id="span_userTip" style="color:#f00;display:inline-block;" ></span>
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" style="width: 50px"><i class="fa fa-address-card-o fa-lg"></i></span>
+              </div>
+              <input id="name" type="text" class="form-control" placeholder="姓名" onblur="m_nameTipOnblur()">
+            </div>
+            <div class="input-group mb-1">
+              <span id="span_nameTip" style="color:#f00;display:inline-block;" ></span>
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" style="width: 50px"><i class="fa fa-intersex fa-lg"></i></span>
+              </div>
+              <select id="sex" name="sex" class="form-control">
+                <option value="男">男</option>
+                <option value="女">女</option>>
+              </select>
+            </div>
+            <div class="input-group mb-1">
+              <span id="span_sexTip" style="color:#f00;display:inline-block;" ></span>
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" style="width: 50px"><i class="fa fa-phone fa-lg"></i></span>
+              </div>
+              <input id="phone" type="text" class="form-control" placeholder="手机号码" onblur="m_phoneTipOnblur()">
+            </div>
+            <div class="input-group mb-1">
+              <span id="span_phoneTip" style="color:#f00;display:inline-block;" ></span>
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" style="width: 50px">@</span>
+              </div>
+              <input id="email" type="text" class="form-control" placeholder="邮箱" onblur="m_emailTipOnblur()">
+            </div>
+            <div class="input-group mb-1">
+              <span id="span_emailTip" style="color:#f00;display:inline-block;" ></span>
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" style="width: 50px"><i class="icon-lock"></i></span>
+              </div>
+              <input id="password" type="password" class="form-control" placeholder="密码" onblur="m_passwordTipOnblur()">
+            </div>
+            <div class="input-group mb-1">
+              <span id="span_passwordTip" style="color:#f00;display:inline-block;" ></span>
+            </div>
+
+            <div class="input-group mb-4">
+              <div class="input-group-prepend">
+                <span class="input-group-text" style="width: 50px"><i class="icon-lock"></i></span>
+              </div>
+              <input id="againPassword" type="password" class="form-control" placeholder="确认密码">
+            </div>
+            <div class="input-group mb-1">
+              <span id="span_againPasswordTip" style="color:#f00;display:inline-block;" ></span>
+            </div>
+
+            <button type="submit" class="btn btn-block btn-success" onclick="m_zhuce()">创建账户</button>
+          </div>
+          <!--<div class="card-footer p-4">-->
+            <!--<div class="row">-->
+              <!--<div class="col-6">-->
+                <!--<button class="btn btn-block btn-facebook" type="button">-->
+                  <!--<span>facebook</span>-->
+                <!--</button>-->
+              <!--</div>-->
+              <!--<div class="col-6">-->
+                <!--<button class="btn btn-block btn-twitter" type="button">-->
+                  <!--<span>twitter</span>-->
+                <!--</button>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap and necessary plugins -->
+  <script src="vendors/js/jquery.min.js"></script>
+  <script src="vendors/js/popper.min.js"></script>
+  <script src="vendors/js/bootstrap.min.js"></script>
+  <script>
+    var users = [];
+    var m_inp_user,m_inp_email,m_inp_phone,m_inp_password,m_inp_apsw,m_inp_name;
+    var m_useOrNo = 1,m_nameOrNo = 1,m_emailOrNo = 1,m_phoneOrNo = 1,m_passwordOrNo  = 1;
+    var m_inp_sex,m_inp_role;
+
+    /**
+     * 正则表达式:验证是否包含中文大小写英文数字以及下划线
+     */
+    var userPattern = /^[a-zA-Z][a-zA-Z0-9_]{4,15}$/;
+    var namePattern = /^[\u4E00-\u9FA5A-Za-z]+$/;
+    var emailPattern = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+    var phonePattern = /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
+    var passwordPattern = /^[a-zA-Z]\w{5,17}$/;
+
+    function m_userTipOnblur(){
+      m_inp_user = $("#user").val();//获取ID为user的控件的值
+      $("#span_userTip").css("display","inline-block")//使span_userTip控件显示，对一个对象指定inline-block属性，可以将对象呈递为内联对象，但是对象的内容作为块对象呈递。
+      if(m_inp_user == ""){//如果账号为空，提示不能为空
+        $("#span_userTip").css("color","#f00");//span_userTip控件的字为红色
+        $("#span_userTip")[0].innerText = " * 账号不能为空(字母开头，允许5-16字节，允许字母数字下划线)";//赋给span_userTip控件的值内容为：账号不能为空
+      }else{
+        if(userPattern.test(m_inp_user)){
+          $.ajax({
+            type:'get',
+            url:'/register/acquire_UserdataApi',
+            success:function(result) {
+              users = result;
+              if(users.length == 0){
+                m_useOrNo = 0;
+                $("#span_userTip").css("color","#0094ff");//span_userTip控件的字为蓝色
+                $("#span_userTip")[0].innerText = " * 此账号可以放心使用";
+              }else{
+                for(var i = users.length-1;i>=0;i--){
+                  if(users[i].username == m_inp_user){
+                    m_useOrNo = 1;
+                    $("#span_userTip").css("color","#f00");//span_userTip控件的字为红色
+                    $("#span_userTip")[0].innerText = " * 该账号已经被占用";
+                  } else{
+                    m_useOrNo = 0;
+                    $("#span_userTip").css("color","#0094ff");//span_userTip控件的字为蓝色
+                    $("#span_userTip")[0].innerText = " * 此账号可以放心使用";
+                  }
+                }
+              }
+            }
+          })
+        }else{
+          m_useOrNo = 1;
+          $("#span_userTip").css("color","#f00");//span_userTip控件的字为红色
+          $("#span_userTip")[0].innerText = " * 存在非法字符(字母开头，允许5-16字节，允许字母数字下划线)";
+        }
+      }
+    }
+
+    function m_nameTipOnblur() {
+      m_inp_name = $("#name").val();
+      $("#span_nameTip").css("display","inline-block")//使span_userTip控件显示，对一个对象指定inline-block属性，可以将对象呈递为内联对象，但是对象的内容作为块对象呈递。
+      if(m_inp_name == ""){//如果姓名为空，提示不能为空
+        $("#span_nameTip").css("color","#f00");//span_userTip控件的字为红色
+        $("#span_nameTip")[0].innerText = " * 姓名不能为空(允许字母中文)";
+      }else{
+        if(namePattern.test(m_inp_name)){
+          m_nameOrNo = 0;
+          $("#span_nameTip").css("color","#0094ff");//span_userTip控件的字为蓝色
+          $("#span_nameTip")[0].innerText = " * 姓名输入正确";
+        }else{
+          m_nameOrNo = 1;
+          $("#span_nameTip").css("color","#f00");//span_userTip控件的字为红色
+          $("#span_nameTip")[0].innerText = " * 存在非法字符(允许字母中文)";
+        }
+      }
+    }
+
+    function m_emailTipOnblur() {
+      m_inp_email = $("#email").val();
+      $("#span_emailTip").css("display","inline-block")//使span_userTip控件显示，对一个对象指定inline-block属性，可以将对象呈递为内联对象，但是对象的内容作为块对象呈递。
+      if(m_inp_email == ""){//如果邮箱为空，提示不能为空
+        $("#span_emailTip").css("color","#f00");//span_userTip控件的字为红色
+        $("#span_emailTip")[0].innerText = " * 邮箱不能为空(允许字母中文)";
+      }else{
+        if(emailPattern.test(m_inp_email)){
+          m_emailOrNo = 0;
+          $("#span_emailTip").css("color","#0094ff");//span_userTip控件的字为蓝色
+          $("#span_emailTip")[0].innerText = " * 邮箱输入正确";
+        }else{
+          m_emailOrNo = 1;
+          $("#span_emailTip").css("color","#f00");//span_userTip控件的字为红色
+          $("#span_emailTip")[0].innerText = " * 邮箱输入错误";
+        }
+      }
+    }
+
+    function m_phoneTipOnblur() {
+      m_inp_phone = $("#phone").val();
+      $("#span_phoneTip").css("display","inline-block")//使span_userTip控件显示，对一个对象指定inline-block属性，可以将对象呈递为内联对象，但是对象的内容作为块对象呈递。
+      if(m_inp_phone == ""){//如果号码为空，提示不能为空
+        $("#span_phoneTip").css("color","#f00");//span_userTip控件的字为红色
+        $("#span_phoneTip")[0].innerText = " * 号码不能为空";
+      }else{
+        if(phonePattern.test(m_inp_phone)){
+          m_phoneOrNo = 0;
+          $("#span_phoneTip").css("color","#0094ff");//span_userTip控件的字为蓝色
+          $("#span_phoneTip")[0].innerText = " * 号码输入正确";
+        }else{
+          m_phoneOrNo = 1;
+          $("#span_phoneTip").css("color","#f00");//span_userTip控件的字为红色
+          $("#span_phoneTip")[0].innerText = " * 号码输入错误";
+        }
+      }
+    }
+
+    function m_passwordTipOnblur() {
+      m_inp_password = $("#password").val();
+      $("#span_passwordTip").css("display","inline-block")//使span_userTip控件显示，对一个对象指定inline-block属性，可以将对象呈递为内联对象，但是对象的内容作为块对象呈递。
+      if(m_inp_password == ""){//如果号码为空，提示不能为空
+        $("#span_passwordTip").css("color","#f00");//span_userTip控件的字为红色
+        $("#span_passwordTip")[0].innerText = " * 密码不能为空(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)";
+      }else{
+        if(passwordPattern.test(m_inp_password)){
+          m_passwordOrNo = 0;
+          $("#span_passwordTip").css("color","#0094ff");//span_userTip控件的字为蓝色
+          $("#span_passwordTip")[0].innerText = " * 密码输入正确";
+        }else{
+          m_passwordOrNo = 1;
+          $("#span_passwordTip").css("color","#f00");//span_userTip控件的字为红色
+          $("#span_passwordTip")[0].innerText = " * 密码输入错误(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)";
+        }
+      }
+    }
+
+    //立即注册，首先要判断一下：账号，姓名，邮箱，密码，确认密码，联系方式是否为空，如果为空，就跳出提示：请把注册信息填写完整。如果不为空，则把数据插入到对应的网上注册委员登记fjsw.w_mbertoreg的这张表里。并跳出提示：注册成功，并关闭当前注册页
+    function m_zhuce() {
+      m_inp_user = $("#user").val()//账号的值
+      m_inp_name = $("#name").val()//名字的值
+      m_inp_password = $("#password").val()//密码的值,
+      m_inp_apsw = $("#againPassword").val()//确认密码的值,
+      m_inp_phone = $("#phone").val()//联系方式的值,
+      m_inp_email = $("#email").val()//邮箱的值
+      m_inp_sex = $("#sex").val()//性别的值
+      m_inp_role = $("#role").val()//角色的值
+
+      window.setTimeout(function () {//延迟
+        console.log("1")
+        if (m_inp_user == "" || m_inp_name== "" || m_inp_password== "" || m_inp_apsw == ""||m_inp_phone==""||m_inp_email=="") {//判断用户名，姓名，密码，确认密码，联系方式，是否为空
+          console.log("2")
+          alert("请把注册信息填写完整");//为空时提示：请把注册信息填写完整
+        } else if (m_inp_password != m_inp_apsw) {//不为空时，判断密码和确认密码是否相同，若不同时
+          console.log("3")
+          $("#span_againPasswordTip").css("color", "#f00");//span_ConfirmPasswordTip控件的字为红色
+          $("#span_againPasswordTip")[0].innerText = "密码不一致，请重新输入";//赋给span_againPasswordTip控件的值内容为：密码不一致，请重新输入
+          alert("密码与确认密码不一致");
+        } else if (m_useOrNo == 1) {//判断账号若被占用时
+          console.log("4")
+          alert("账号输入有误,请更换账号");
+        } else if (m_nameOrNo == 1) {
+          console.log("5")
+          alert("该姓名输入有误,请更换姓名");
+        } else if (m_emailOrNo == 1) {
+          console.log("6")
+          alert("该邮箱输入有误,请更换邮箱");
+        }else if (m_phoneOrNo == 1) {
+          console.log("7")
+          alert("该手机号码输入有误,请更换手机号码");
+        }else if (m_passwordOrNo == 1) {
+          console.log("8")
+          alert("该密码输入有误,请更换密码");
+        } else {
+          console.log("9")
+          $("#span_againPasswordTip").css("color", "#0094ff");//span_againPasswordTip控件的字为蓝色
+          $("#span_againPasswordTip")[0].innerText = "密码输入一致";//赋给span_againPasswordTip控件的值内容为：密码输入正确
+          var user = {"username":m_inp_user,"name":m_inp_name,"email":m_inp_email,"phone":m_inp_phone,"password":m_inp_password,"sex":m_inp_sex,"role":m_inp_role};//json
+          $.ajax({
+            type:'GET',
+            url:'/register/add',
+            data:user,
+            success:function(user){
+              alert("注册成功！");
+            }
+          });
+        }
+      }, 1000);
+
+    }
+  </script>
+
+</body>
+</html>
